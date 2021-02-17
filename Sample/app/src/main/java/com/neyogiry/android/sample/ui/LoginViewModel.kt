@@ -29,7 +29,6 @@ class LoginViewModel : ViewModel() {
             user.value?.let { it == "Admin" } == true &&
                     password.value?.let { it == "Password*123" } == true
 
-        
         _loginResult.postValue(isValid)
     }
 
