@@ -1,19 +1,19 @@
-package com.neyogiry.android.sample.ui
+package com.neyogiry.android.sample.ui.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.neyogiry.android.sample.R
 import com.neyogiry.android.sample.databinding.ActivityLoginBinding
 import com.neyogiry.android.sample.util.SharedPreferencesHelper
 import com.neyogiry.android.sample.util.toast
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var loginViewModel: LoginViewModel
+    private val loginViewModel: LoginViewModel by viewModel()
     private val sharedPreferencesHelper: SharedPreferencesHelper? by lazy {
         SharedPreferencesHelper.getDefaultSharedPreferences(this)?.let { SharedPreferencesHelper(it) }
     }
@@ -23,8 +23,6 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-        loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         validateSession()
         setupEvents()

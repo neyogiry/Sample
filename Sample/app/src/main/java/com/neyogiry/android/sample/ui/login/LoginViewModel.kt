@@ -1,4 +1,4 @@
-package com.neyogiry.android.sample.ui
+package com.neyogiry.android.sample.ui.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
