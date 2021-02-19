@@ -7,7 +7,6 @@ import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
 import com.neyogiry.android.sample.data.api.ApiService
 import com.neyogiry.android.sample.data.repository.PageKeyedMoviesPagingSource
-import com.neyogiry.android.sample.util.SharedPreferencesHelper
 
 class MoviesViewModel(
     private val apiService: ApiService,
