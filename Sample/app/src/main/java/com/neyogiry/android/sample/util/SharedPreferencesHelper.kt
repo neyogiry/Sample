@@ -22,7 +22,7 @@ class SharedPreferencesHelper(private val mSharedPreferences: SharedPreferences)
      */
     fun saveKey(key: String): Boolean {
         val editor = mSharedPreferences.edit()
-        editor.putString(KEY_TOKEN, "b4352fc298ecbd257fa347c48d4cd70c")
+        editor.putString(KEY_TOKEN, key)
 
         return editor.commit()
     }
