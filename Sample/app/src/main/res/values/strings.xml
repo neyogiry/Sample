@@ -8,4 +8,6 @@
     <string name="login_failure_message">Incorrect credentials</string>
     <string name="login_successful_message">Successful login</string>
 
+    <string name="retry">Retry</string>
+
 </resources>

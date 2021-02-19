@@ -1,6 +1,7 @@
 package com.neyogiry.android.sample.data.repository
 
 import androidx.paging.PagingSource
+import com.neyogiry.android.sample.data.BaseErrorUtil
 import com.neyogiry.android.sample.data.api.ApiService
 import com.neyogiry.android.sample.domain.model.Movie
 import com.neyogiry.android.sample.util.LoggerUtil
@@ -40,7 +41,7 @@ class PageKeyedMoviesPagingSource(private val apiService: ApiService, private va
                 )
 
             } else {
-                return LoadResult.Error(Throwable("An error has occurred"))
+                return LoadResult.Error(Throwable(BaseErrorUtil.message(response.errorBody())))
             }
 
         } catch (e: IOException) {
