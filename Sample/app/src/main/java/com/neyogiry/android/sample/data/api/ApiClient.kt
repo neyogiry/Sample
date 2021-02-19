@@ -11,6 +11,7 @@ object ApiClient {
     private const val TAG = "ApiClient"
 
     private const val PATH = "https://api.themoviedb.org/3/"
+    const val PATH_IMAGE = "https://image.tmdb.org/t/p/"
 
     private const val READ_TIMEOUT: Long = 60
     private const val CONNECT_TIMEOUT: Long = 60

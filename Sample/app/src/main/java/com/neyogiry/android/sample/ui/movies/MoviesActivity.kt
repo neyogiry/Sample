@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.neyogiry.android.sample.databinding.ActivityMoviesBinding
+import com.neyogiry.android.sample.util.ImageLoaderHelper
 import kotlinx.coroutines.flow.collect
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -24,7 +25,8 @@ class MoviesActivity : AppCompatActivity() {
     }
 
     private fun initAdapter() {
-        adapter = MoviesAdapter()
+        val imageLoader = ImageLoaderHelper(this)
+        adapter = MoviesAdapter(imageLoader)
         binding.list.adapter = adapter
 
         lifecycleScope.launchWhenCreated {
